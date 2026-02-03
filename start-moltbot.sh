@@ -137,6 +137,7 @@ node << EOFNODE
 const fs = require('fs');
 
 const configPath = '/root/.clawdbot/clawdbot.json';
+const configPathTest = '/root/.clawdbot/clawdbot-test.json';
 console.log('Updating config at:', configPath);
 let config = {};
 
@@ -307,6 +308,7 @@ if (bedrockKey && bedrockModelId) {
 
 // Write updated config
 fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
+fs.writeFileSync(configPathTest, JSON.stringify(config, null, 2));
 console.log('Configuration updated successfully');
 console.log('Config:', JSON.stringify(config, null, 2));
 EOFNODE
